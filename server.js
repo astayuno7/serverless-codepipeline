@@ -19,7 +19,7 @@ const dynamoDB = new AWS.DynamoDB.DocumentClient();
 const tableName = 'users';
 
 app.get('/', (req, res) => {
-  return res.send('Hello World!');
+  return res.send('Hello World! Hello World!');
 });
 
 app.post('/users/create', (req, res) => {
