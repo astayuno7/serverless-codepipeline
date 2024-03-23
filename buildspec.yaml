@@ -13,4 +13,8 @@ phases:
 
 post-build:
   commands:
-    - serverless deploy
+    - npm install -g serverless
+
+build:
+  commands:
+    - sls deploy --stage $STAGE_NAME --region $REGION --service server-dynamo-db-dev-app
