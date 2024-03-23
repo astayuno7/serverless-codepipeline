@@ -1,0 +1,16 @@
+version: 0.2
+
+phases:
+  install:
+    runtime-versions:
+      nodejs: 18
+    commands:
+      - npm install --force
+      - npm install -g serverless
+      # - |
+      #   PARAMETER_NAME="/store-matters/ajdg-api"
+      #   aws ssm get-parameter --name $PARAMETER_NAME --region ap-southeast-1 --query "Parameter.Value" --output text > .env
+
+post-build:
+  commands:
+    - serverless deploy
